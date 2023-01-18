@@ -6,20 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>guess my number</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <div class="container">
+    <div class="container ">
         <div class="row">
           <div class="col"><button class="btn btn-primary">Again!</button></div>
           <div class="col"><h4 class="text-end"> (Between 1 and 20)</h4></div>
         </div>
-        <div class="row"><h2 class="text-center">GUESS MY NUMBER !</h2></div>
-     <div class="container">
+        <div class="row mt-5"><h2 class="text-center">GUESS MY NUMBER !</h2></div>
+     <div class="container  mt-5">
         <div class="row-">
-            <div class="col"><span class=''>?</span></div>
+            <div class="d-flex justify-content-center guessNum"><p class='text-center num '>?</p></div>
         </div>
+     </div>
+     <div class="container  mt-5">
+      <div class="row">
+        <div class="col d-flex justify-content-center"><input type="number" placeholder="start guessing..."></div>
+        <div class="col  d-flex justify-content-center"><button>Check!</button></div>
+      </div>
+     </div>
+     <div class="container mt-5 ">
+      <div class="row">
+        <div class="col d-flex justify-content-center">Score : </div>
+        <div class="col d-flex justify-content-center">High Score : </div>
+      </div>
      </div>
     <script src="js/bootstrap.bundle.min.js"></script>
   </body>
-  <!--  -->
+ 
 </html>

@@ -1,0 +1,1 @@
+let massage = document.querySelector('.massage');

@@ -15,13 +15,21 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector(".massage").textContent = " NO NUMBER";
   } else if (guess === secretNum) {
     document.querySelector(".massage").textContent = "Correct Number";
-  } else if (guess < secretNum) {
-    document.querySelector(".massage").textContent = "Too Low";
-    score--;
-    document.querySelector(".score").textContent = score;
   } else if (guess > secretNum) {
-    document.querySelector(".massage").textContent = "Too High";
-    score--;
-    document.querySelector(".score").textContent = score;
+    if (score > 1) {
+      document.querySelector(".massage").textContent = "Too High";
+      score--;
+      document.querySelector(".score").textContent = score;
+    } else {
+      document.querySelector(".massage").textContent = "You Lost The Game";
+    }
+  } else if (guess < secretNum) {
+    if (score > 1) {
+      document.querySelector(".massage").textContent = "Too Low";
+      score--;
+      document.querySelector(".score").textContent = score;
+    } else {
+      document.querySelector(".massage").textContent = "You Lost The Game";
+    }
   }
 });

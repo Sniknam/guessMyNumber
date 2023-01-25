@@ -1,5 +1,7 @@
 body {
-    background-image: url('bg-masthead.jpg');
+    /* background-image: url('bg-masthead.jpg'); */
+    background-color: black;
+    color: aliceblue;
 }
 .num{
   
@@ -10,6 +12,7 @@ body {
     margin-right: auto;
     font-size: 35px;
   text-align: center;
+  color: black;
 
     }
 

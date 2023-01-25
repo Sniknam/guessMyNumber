@@ -5,31 +5,41 @@ document.querySelector('.massage').value;
 
 let secretNum = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
+let highscore = 0;
 
 document.querySelector(".check").addEventListener("click", function () {
   const guess = Number(document.querySelector(".inputNum").value);
 
+  const displayMassage = function (massage) {
+    document.querySelector(".massage").textContent = massage;
+  };
+
+  // when is no number
   if (!guess) {
-    document.querySelector(".massage").textContent = " NO NUMBER";
+    displayMassage(" NO NUMBER");
+
+    // same number :when player wins
   } else if (guess === secretNum) {
-    document.querySelector(".massage").textContent = "Correct Number";
+    displayMassage(" Correct Number");
+
     document.querySelector("body").style.backgroundColor = "green";
     document.querySelector(".num").textContent = secretNum;
-  } else if (guess > secretNum) {
-    if (score > 1) {
-      document.querySelector(".massage").textContent = "Too High";
-      score--;
-      document.querySelector(".score").textContent = score;
-    } else {
-      document.querySelector(".massage").textContent = "You Lost The Game";
+
+    // adding highscore
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector(".highScore").textContent = highscore;
     }
-  } else if (guess < secretNum) {
+    // different number :when number is high or low
+  } else if (guess !== secretNum) {
     if (score > 1) {
-      document.querySelector(".massage").textContent = "Too Low";
+      displayMassage(guess > secretNum ? "Too High" : "Too Low");
+
       score--;
       document.querySelector(".score").textContent = score;
     } else {
-      document.querySelector(".massage").textContent = "You Lost The Game";
+      displayMassage(" You Lost The Number");
+
       document.querySelector("body").style.backgroundColor = "red";
     }
   }
